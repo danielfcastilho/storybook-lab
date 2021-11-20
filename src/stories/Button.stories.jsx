@@ -1,40 +1,33 @@
-import React from 'react';
+import React from "react";
+import Button from "@material-ui/core/Button";
 
-import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: "Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    onClick: { action: "clicked" },
+    color: {
+      options: ["primary", "secondary", "tertiary"],
+      type: "select",
+      defaultValue: "primary",
+    },
+    text: {
+      defaultValue: "Confirmar",
+    },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <Button {...args}>{args.text}</Button>;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const GoBack = Template.bind({});
+GoBack.args = {
+  text: "Voltar",
+  variant: "contained",
+  label: "Button",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const ToggledOn = Template.bind({});
+ToggledOn.args = {
+  variant: "outlined",
+  label: "Button",
 };
