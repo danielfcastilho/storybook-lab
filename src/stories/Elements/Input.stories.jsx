@@ -1,7 +1,7 @@
 import React from "react";
 
 export default {
-  title: "Form/Input",
+  title: "Elements/Input",
 };
 
 const Template = (args) => <div {...args}>{args.text}</div>;

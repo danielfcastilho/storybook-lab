@@ -1,15 +1,15 @@
-import { muiTheme } from 'storybook-addon-material-ui'
+import React from "react";
+import { ThemeProvider } from "@material-ui/core";
+import { StylesProvider } from "@material-ui/core";
+
+import theme from "../src/theme";
 
 export const decorators = [
-	muiTheme()
+  (Story) => (
+    <StylesProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    </StylesProvider>
+  ),
 ];
-
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-}
