@@ -8,18 +8,12 @@ export default {
 
 const Template = (args) => (
   <Box
-    sx={{
-      bgcolor: "background.paper",
-      m: 1,
-      p: 2,
-      width: "8rem",
-      height: "5rem",
-      border: "1px solid",
-      borderColor: "#a9a9a9",
-      boxShadow: "0px 0px 20px 0px rgba(169,58,232,0.4)",
-    }}
-    boxShadow={4}
-  >Dados</Box>
+    boxShadow={2}
+    bgcolor="background.paper"
+    m={1}
+    p={1}
+    style={{ width: "400px", height: "300px" }}
+  ></Box>
 );
 
 export const Default = Template.bind({});

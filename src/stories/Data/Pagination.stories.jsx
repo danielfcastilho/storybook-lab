@@ -1,10 +1,13 @@
 import React from "react";
+import Pagination from "@material-ui/lab/Pagination";
 
 export default {
   title: "Data/Pagination",
 };
 
-const Template = (args) => <div {...args}>{args.text}</div>;
+const Template = (args) => <Pagination {...args}>{args.text}</Pagination>;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  count: 10,
+};

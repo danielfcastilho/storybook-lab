@@ -9,7 +9,6 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward";
 
 export default {
   title: "Elements/Button",
-  component: "Button",
   argTypes: {
     onClick: { action: "clicked" },
   },
@@ -42,15 +41,17 @@ export const Sort = (args) => {
   };
   return (
     <ToggleButtonGroup
+      size="small"
+      style={{ height: 50, boxShadow: "1px 2px 1px -1px rgba(0,0,0,0.40)" }}
       value={alignment}
       onChange={handleAlignment}
       exclusive
     >
-      <ToggleButton backgroundColor="red" {...args} value="desc" key="desc">
-        <ArrowDownward color="primary" />
+      <ToggleButton {...args} value="desc" key="desc">
+        <ArrowDownward />
       </ToggleButton>
       <ToggleButton {...args} value="asc" key="asc">
-        <ArrowUpward color="primary" />
+        <ArrowUpward />
       </ToggleButton>
     </ToggleButtonGroup>
   );
